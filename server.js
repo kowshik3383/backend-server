@@ -16,7 +16,7 @@ const io = new Server(server, {
 
 const port = process.env.PORT || 5000;
 app.use(cors());
-// Load Google Translation API Key from environment variables
+// Load Google Translation API Key from environment variable
 const GOOGLE_TRANSLATION_API_KEY = process.env.GOOGLE_TRANSLATION_API_KEY;
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
