@@ -14,7 +14,7 @@ const io = new Server(server, {
     },
 });
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 app.use(cors());
 // Load Google Translation API Key from environment variables
 const GOOGLE_TRANSLATION_API_KEY = process.env.GOOGLE_TRANSLATION_API_KEY;
@@ -167,5 +167,7 @@ app.post("/summarize-conversation", async (req, res) => {
     }
 });
 
-server.listen(3001, () => console.log('Socket server running on port 3001'));
+
+server.listen(port, () => console.log(`Socket server running on port ${port}`));
 app.listen(port, () => console.log(`API server running on http://localhost:${port}`));
+
