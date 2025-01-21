@@ -23,6 +23,9 @@ const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+app.get("/", (req, res) => {
+    res.send("Server is running!");
+});
 
 // Retry logic for handling rate-limiting errors
 const retryRequest = async (url, data, headers, retries = 3, delay = 1000) => {
